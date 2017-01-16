@@ -6,26 +6,44 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>Facelet Title</title>
+        <link href="Recourses/css/estilos.css" rel="stylesheet" type="text/css"/>
+        <link href="Recourses/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="Recourses/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+        <link href="Recourses/css/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css"/>
+        <link href="Recourses/css/export.css" rel="stylesheet" type="text/css"/>
+        <link href="Recourses/css/demo.css" rel="stylesheet" type="text/css"/>
+        <title>Realizar venta</title>
     </h:head>
     <h:body>
-        <h:form>
-            <p:outputLabel id="fechaVenta" value="Ingrese la fecha de la venta" />
-            <p:inputText id="fechaVenta" value="#{ventaControlador.venta.fechaVenta}">
-                <f:validateLength id="fechaVenta" maximum="12" minimum="10" />
+        <h:form class="form-group-lg">
+            <h1>REGISTRAR VENTA</h1>
+            <br/><br/>
+            <div class="col-lg-4">
+                <p:outputLabel value="Ingrese la fecha de la venta"/>
+            </div>
+            <p:inputText type="date" id="fechaVenta" value="#{ventaControlador.venta.fechaVenta}">
+                <f:convertDateTime id="fechaVenta" pattern="MM/dd/yyyy HH:mm:ss" />
             </p:inputText>
-            <p:outputLabel id="ivaVenta" value="Ingrese el iva de la venta" />
-            <p:inputText id="ivaVenta" value="#{ventaControlador.venta.ivaVenta}">
+            <p:message for="fechaVenta" style="color:#cc0000" />
+            <br/><br/>
+            <div class="col-lg-4">
+                <p:outputLabel value="Ingrese el iva de la venta" />
+            </div>
+            <p:inputText type="number" id="ivaVenta" value="#{ventaControlador.venta.ivaVenta}">
                 <f:validateLength id="ivaVenta" maximum="7" minimum="4" />
-            </p:inputText>
-            <p:outputLabel id="idMesero" value="Ingrese el numero del mesero que realizo la venta" />
+            </p:inputText><br/><br/>
+            <div class="col-lg-4">
+            <p:outputLabel value="Ingrese el numero del mesero que realizo la venta" />
+            </div>
             <p:inputText id="idMesero" value="#{ventaControlador.venta.meserosidMeseros}">
                 <f:validateLength id="idMesero" maximum="5" minimum="3" />
-            </p:inputText>
-            <p:outputLabel id="idSucursal" value="Ingrese la fecha de la venta" />
+            </p:inputText><br/><br/>
+            <div class="col-lg-4">
+                <p:outputLabel value="Ingrese la fecha de la venta" />
+            </div>
             <p:inputText id="idSucursal" value="#{ventaControlador.venta.sucursalesIdsucursales}">
                 <f:validateLength id="idSucursal" maximum="2" minimum="1" />
-            </p:inputText>
+            </p:inputText><br/><br/>
         </h:form>
     </h:body>
 </html>
