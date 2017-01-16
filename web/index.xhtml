@@ -9,9 +9,24 @@
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-        Hello from Facelets
-        <br />
-        <h:link outcome="welcomePrimefaces" value="Primefaces welcome page" />
+        <h:form>
+            <p:outputLabel id="fechaVenta" value="Ingrese la fecha de la venta" />
+            <p:inputText id="fechaVenta" value="#{ventaControlador.venta.fechaVenta}">
+                <f:validateLength id="fechaVenta" maximum="12" minimum="10" />
+            </p:inputText>
+            <p:outputLabel id="ivaVenta" value="Ingrese el iva de la venta" />
+            <p:inputText id="ivaVenta" value="#{ventaControlador.venta.ivaVenta}">
+                <f:validateLength id="ivaVenta" maximum="7" minimum="4" />
+            </p:inputText>
+            <p:outputLabel id="idMesero" value="Ingrese el numero del mesero que realizo la venta" />
+            <p:inputText id="idMesero" value="#{ventaControlador.venta.meserosidMeseros}">
+                <f:validateLength id="idMesero" maximum="5" minimum="3" />
+            </p:inputText>
+            <p:outputLabel id="idSucursal" value="Ingrese la fecha de la venta" />
+            <p:inputText id="idSucursal" value="#{ventaControlador.venta.sucursalesIdsucursales}">
+                <f:validateLength id="idSucursal" maximum="2" minimum="1" />
+            </p:inputText>
+        </h:form>
     </h:body>
 </html>
 
