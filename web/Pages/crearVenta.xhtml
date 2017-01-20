@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <head>
+        <link href="../Recourses/css/estilos.css" rel="stylesheet" type="text/css"/>
+        <link href="../Recourses/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="../Recourses/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+        <link href="../Recourses/css/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css"/>
+        <link href="../Recourses/css/export.css" rel="stylesheet" type="text/css"/>
+        <link href="../Recourses/css/demo.css" rel="stylesheet" type="text/css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Realizar venta</title>
+    </head>
+    <body>
+        <h:form class="form-group-lg">
+            <h1>REGISTRAR VENTA</h1>
+            <br/><br/>
+            <div class="col-lg-4">
+                <p:outputLabel value="Ingrese la fecha de la venta"/>
+            </div>
+            <p:inputText type="date" id="fechaVenta" value="#{ventaControlador.venta.fechaVenta}" />
+            <p:message for="fechaVenta" style="color:#cc0000" />
+            <br/><br/>
+            <div class="col-lg-4">
+                <p:outputLabel value="Ingrese el iva de la venta" />
+            </div>
+            <p:inputText type="number" id="ivaVenta" value="#{ventaControlador.venta.ivaVenta}" />
+            <p:message for="ivaVenta" style="color:#cc0000" />
+            <br/><br/>
+            <div class="col-lg-4">
+                <p:outputLabel value="Ingrese el numero del mesero que realizo la venta" />
+            </div>
+            <h:selectOneMenu id="idMesero" value="#{ventaControlador.venta.meserosidMeseros}">
+                <f:selectItem itemValue="221" itemLabel=" Mesero 221" />
+                <f:selectItem itemValue="222" itemLabel=" Mesero 222" />
+                <f:selectItem itemValue="223" itemLabel=" Mesero 223" />
+                <f:selectItem itemValue="224" itemLabel=" Mesero 224" />
+                <f:selectItem itemValue="225" itemLabel=" Mesero 225" />				
+                <f:selectItem itemValue="226" itemLabel=" Mesero 226" />				
+                <f:selectItem itemValue="227" itemLabel=" Mesero 227" />				
+                <f:selectItem itemValue="228" itemLabel=" Mesero 228" />				
+                <f:selectItem itemValue="229" itemLabel=" Mesero 229" />				
+                <f:selectItem itemValue="230" itemLabel=" Mesero 230" />				
+            </h:selectOneMenu>
+            <p:message for="idMesero" style="color:#cc0000" />
+            <br/><br/>
+            <div class="col-lg-4">
+                <p:outputLabel value="Ingrese la sucursal de la venta" />
+            </div>
+            <h:selectOneMenu id="idSucursal" value="#{ventaControlador.venta.sucursalesIdsucursales}">
+                <f:selectItem itemValue="1" itemLabel="Sucursal 1" />
+                <f:selectItem itemValue="2" itemLabel="Sucursal 2" />
+                <f:selectItem itemValue="3" itemLabel="Sucursal 3" />
+                <f:selectItem itemValue="4" itemLabel="Sucursal 4" />
+            </h:selectOneMenu>
+            <p:message for="idSucursal" style="color:#cc0000" /><br/><br/>
+            
+            <h:commandButton id="registro" actionListener="#{ventaControlador.registrarVenta()}" value="Registar Venta" />
+            <br/>
+            <a href="../index.xhtml">Volver</a>
+        </h:form>
+    </body>
+</html>
